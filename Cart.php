@@ -7,9 +7,9 @@
     protected $floatDiscount;
 
     function __construct() {
-      $milkShakeDiscount = 0.85;
-      $floatDiscount = 0.5;
-      $totalCost = 100.0;
+      $this->milkShakeDiscount = 0.85;
+      $this->floatDiscount = 0.5;
+      $this->totalCost = 0.0;
     }
 
     function getTotal() {

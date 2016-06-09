@@ -6,7 +6,7 @@
 
   $shoppingCart = new Cart();
 
-  echo $shoppingCart->getTotal();
+  var_dump($shoppingCart->getTotal());
 
   // $vanillaCone = new Cone("waffle", "vanilla");
   // $bubblegumMilkshake = new Milkshake("whole", "bubblegum");

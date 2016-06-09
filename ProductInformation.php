@@ -8,8 +8,6 @@
         "chocolate" => ["price" => 3.00, "name" => "Chocolate"],
         "vanilla" => ["price" => 1.50, "name" => "Vanilla"]
       ];
-    function __construct() {}
-
   };
 
 ?>
