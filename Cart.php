@@ -12,8 +12,16 @@
       $totalCost = 0.0;
     }
 
-    public function addToCart($item) {
+    public function addToCart($itemCost) {
+      $totalCost += $itemCost;
+    }
 
+    public function removeFromCart($itemCost) {
+      if($itemCost > $totalCost) {
+        $totalCost = 0;
+      } else {
+      $totalCost = $totalCost - $itemCost;
+      }
     }
 
 
