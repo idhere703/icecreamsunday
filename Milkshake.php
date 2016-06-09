@@ -1,9 +1,8 @@
 <?php
-  require_once('IceCream.php');
-  class Milkshake extends IceCream{
+  class Milkshake {
     public $milkType;
-    function __construct($type, $flavor, $scoops) {
-      parent::__construct($flavor, $scoops);
+    function __construct($type) {
+      parent::__construct();
       $this->milkType = $type;
     }
 

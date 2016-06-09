@@ -1,9 +1,8 @@
 <?php
-  require_once('IceCream.php');
-  class Cone extends IceCream {
+  class Cone {
     public $coneType;
-    function __construct($type, $flavors) {
-      parent::__construct($flavors);
+    function __construct($type) {
+      parent::__construct();
       $this->coneType = $type;
     }
 

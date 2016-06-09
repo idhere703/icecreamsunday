@@ -1,9 +1,8 @@
 <?php
-  require_once('IceCream.php');
-  class Float extends IceCream {
+  class Float {
     public $sodaType;
-    function __construct($type, $flavor, $scoops) {
-      parent::__construct($flavor, $scoops);
+    function __construct($type) {
+      parent::__construct();
       $this->sodaType = $type;
     }
 
