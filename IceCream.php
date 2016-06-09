@@ -1,11 +1,14 @@
 <?php
   class IceCream {
-    public $flavor;
-    public $numOfScoops;
-    function __construct($type, $scoops) {
+    protected $flavor;
+    protected $price;
+    function __construct($type) {
       $this->flavor = $type;
-      $this->numOfScoops = $scoops;
     }
+
+    function getPrice() {
+
+    } 
 
   };
 
