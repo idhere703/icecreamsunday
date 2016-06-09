@@ -6,6 +6,7 @@
 
   $shoppingCart = new Cart();
 
+  $shoppingCart->addToCart(100.01);
   var_dump($shoppingCart->getTotal());
 
   // $vanillaCone = new Cone("waffle", "vanilla");
