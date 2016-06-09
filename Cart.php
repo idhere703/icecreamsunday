@@ -9,18 +9,22 @@
     function __construct() {
       $milkShakeDiscount = 0.85;
       $floatDiscount = 0.5;
-      $totalCost = 0.0;
+      $totalCost = 100.0;
     }
 
-    public function addToCart($itemCost) {
-      $totalCost += $itemCost;
+    function getTotal() {
+      return $this->totalCost;
     }
 
-    public function removeFromCart($itemCost) {
-      if($itemCost > $totalCost) {
-        $totalCost = 0;
+    function addToCart($itemCost) {
+      $this->totalCost += $itemCost;
+    }
+
+    function removeFromCart($itemCost) {
+      if($itemCost > $this->totalCost) {
+        $this->totalCost = 0;
       } else {
-      $totalCost = $totalCost - $itemCost;
+      $this->totalCost = $this->totalCost - $itemCost;
       }
     }
 
