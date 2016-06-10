@@ -1,9 +1,14 @@
 <?php
   class Float extends ProductInformation {
+    protected $sodaTypes = [
+      "coke" => ["price" => 2.55, "name" => "Brand Name Coke"],
+      "pepsi" => ["price" => 1.00, "name" => "Poor mans Coke"],
+      "sprite" => ["price" => 1.50, "name" => "Rich mans Sierra Mist"]
+    ];
     protected $sodaType;
     protected $scoops = array();
     function __construct($type, $flavors) {
-      $this->sodaType = $type;
+      $this->sodaType = $this->sodaTypes[$type];
       // If we have more than one flavor we have more than one scoop. So we
       // check.
       if(is_array($flavors)) {
@@ -16,6 +21,19 @@
         array_push($this->scoops, $this->productInfo[$flavors]);
       }
     }
+    // Get total price for float.
+    public function getTotal() {
+      // Ret val.
+      $temp = 0;
+      // Add soda price.
+      $temp += $this->sodaType["price"];
+      // Add all scoops of ice cream.
+      foreach ($this->scoops as $scoop) {
+        $temp += $scoop["price"];
+      }
+      return $temp;
+    }
+
 
   };
 

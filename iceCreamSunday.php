@@ -13,7 +13,6 @@
   $mixedFloat = new Float("coke", ["vanilla", "chocolate"]);
   // $pepFloat = new Float("pepsi", "butterPecan");
   // $ewwFloat = new Float("sprite", "licorice");
-  var_dump($mixedFloat);
 
 
 ?>
