@@ -1,8 +1,7 @@
 <?php
-  class Milkshake {
+  class Milkshake extends ProductInformation {
     public $milkType;
     function __construct($type) {
-      parent::__construct();
       $this->milkType = $type;
     }
 

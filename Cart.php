@@ -1,7 +1,7 @@
 <?php
   require_once('ProductInformation.php');
 
-  class Cart extends ProductInformation {
+  class Cart {
     protected $totalCost;
     protected $milkShakeDiscount;
     protected $floatDiscount;

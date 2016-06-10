@@ -1,8 +1,7 @@
 <?php
-  class Cone {
+  class Cone extends ProductInformation {
     public $coneType;
     function __construct($type) {
-      parent::__construct();
       $this->coneType = $type;
     }
 
