@@ -41,8 +41,15 @@
         return $this->itemCost;
     }
 
+    // Set the total item cost.
+    public function setItemCost($newCost)
+    {
+        $this->itemCost = $newCost;
+    }
+
     // The the name of the item. This is just whatever was passed in on create.
-    public function getItemName() {
-      return $this->itemName;
+    public function getItemName()
+    {
+        return $this->itemName;
     }
   };
