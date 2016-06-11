@@ -55,7 +55,9 @@
         foreach ($this->items as $item) {
             echo 'Product Type: '.get_class($item)."\n";
             echo 'Item Name: '.$item->getItemName()."\n";
-            echo 'Item Price: $'.number_format($item->getItemCost(), 2)."\n\n";
+            echo 'Total Item Price: $'.number_format($item->getItemCost(), 2)."\n";
+            echo "Product brakedown\n";
+            echo $item->getItemBreakdown();
         }
 
       // Update total.

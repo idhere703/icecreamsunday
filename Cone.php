@@ -8,7 +8,7 @@
       'waffle' => ['price' => 1.00, 'name' => 'Waffle Cone'],
     ];
 
-      public $coneType;
+      protected $coneType;
       protected $itemCost;
       protected $scoops = array();
       protected $itemName;
@@ -73,5 +73,15 @@
     // The the name of the item. This is just whatever was passed in on create.
     public function getItemName() {
       return $this->itemName;
+    }
+
+    // Print a breakdown if the items ingredients and their prices.
+    public function getItemBreakdown() {
+      echo 'Cone type: '.$this->coneType['name'].'- $'.number_format($this->coneType['price'], 2)."\n";
+      echo "Flavors used:\n";
+      foreach ($this->scoops as $scoop) {
+        echo '     '.$scoop['name'].' - $'.number_format($scoop['price'], 2)."\n";
+      }
+      echo "\n\n";
     }
   };

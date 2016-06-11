@@ -65,4 +65,14 @@
     {
         return $this->itemName;
     }
+
+    // Print a breakdown if the items ingredients and their prices.
+    public function getItemBreakdown() {
+      echo 'Soda type: '.$this->sodaType['name'].'- $'.number_format($this->sodaType['price'], 2)."\n";
+      echo "Flavors used:\n";
+      foreach ($this->scoops as $scoop) {
+        echo '     '.$scoop['name'].' - $'.number_format($scoop['price'], 2)."\n";
+      }
+      echo "\n\n";
+    }
   };
