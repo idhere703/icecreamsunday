@@ -11,11 +11,13 @@
       protected $sodaType;
       protected $itemCost;
       protected $scoops = array();
+      protected $itemName;
 
     // Initialize object.
-    public function __construct($type, $flavors)
+    public function __construct($type, $flavors, $floatName)
     {
         $this->sodaType = $this->sodaTypes[$type];
+        $this->itemName = $floatName;
       // If we have more than one flavor we have more than one scoop. So we
       // check.
       if (is_array($flavors)) {
@@ -50,5 +52,10 @@
     public function getItemCost()
     {
         return $this->itemCost;
+    }
+
+    // The the name of the item. This is just whatever was passed in on create.
+    public function getItemName() {
+      return $this->itemName;
     }
   };

@@ -2,6 +2,7 @@
   class Cart
   {
       protected $totalCost;
+      protected $items = array();
       protected $milkShakeDiscount;
       protected $floatDiscount;
 
@@ -20,19 +21,34 @@
     }
 
     // Add item to cart.
-    public function addToCart($itemCost)
+    public function addToCart($item)
     {
-        $this->totalCost += $itemCost;
+        array_push($this->items, $item);
     }
 
     // Remove item from cart.
-    public function removeFromCart($itemCost)
+    public function removeFromCart($item)
     {
-        if ($itemCost > $this->totalCost) {
-            $this->totalCost = 0;
-        } else {
-            $this->totalCost = $this->totalCost - $itemCost;
-        }
+        unset($this->items[$item]);
+    }
+
+    // List all the items in your cart.
+    public function listCartItems() {
+      echo "======================================\n";
+      echo "=========Items In Cart================\n\n";
+      foreach ($this->items as $item) {
+        echo "Item Name: " . $item->getItemName() . "\n";
+        echo "Item Price: " . $item->getItemCost() . "\n\n";
+      }
+
+      echo "======================================\n";
+
+    }
+
+    // Apply all discounts, and list prices/names for everything. Then print
+    // out the total cost.
+    public function checkout() {
+
     }
 
     // Function that applies discount. Only float or milkshakes. No cones.

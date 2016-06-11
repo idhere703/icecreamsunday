@@ -11,13 +11,15 @@
       protected $milkType;
       protected $scoop;
       protected $itemCost;
+      protected $itemName;
 
     // Initialize object.
-    public function __construct($type, $flavor)
+    public function __construct($type, $flavor, $milkshakeName)
     {
         $this->milkType = $this->milkTypes[$type];
         $this->scoop = $this->productInfo[$flavor];
         $this->itemCost = $this->initTotal();
+        $this->itemName = $milkshakeName;
     }
 
     // Get total price for milkshake.
@@ -37,5 +39,10 @@
     public function getItemCost()
     {
         return $this->itemCost;
+    }
+
+    // The the name of the item. This is just whatever was passed in on create.
+    public function getItemName() {
+      return $this->itemName;
     }
   };

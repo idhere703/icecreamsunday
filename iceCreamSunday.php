@@ -9,25 +9,28 @@
   $shoppingCart = new Cart();
 
   // Cones.
-  $vanillaCone = new Cone('waffle', 'vanilla');
-  $superSweetCone = new Cone('sugar', ['strawberry', 'vanilla']);
+  $vanillaCone = new Cone('waffle', 'vanilla', "Plain Vanilla");
+  $superSweetCone = new Cone('sugar', ['strawberry', 'vanilla'], "Super Sweet");
 
   // Milkshakes.
-  $bubblegumMilkshake = new Milkshake('whole', 'bubblegum');
+  $bubblegumMilkshake = new Milkshake('whole', 'bubblegum', "Bubblegum Milkshake");
 
   // Floats.
-  $mixedFloat = new Float('coke', ['vanilla', 'chocolate']);
-  $pepFloat = new Float('pepsi', 'butterPecan');
-  $ewwFloat = new Float('sprite', 'licorice');
+  $mixedFloat = new Float('coke', ['vanilla', 'chocolate'], "Mixed Coke");
+  $pepFloat = new Float('pepsi', 'butterPecan', "Peppie Pecan");
+  $ewwFloat = new Float('sprite', 'licorice', "Braveheart");
 
   // We qualify for a discount so lets apply it and add to the cart.
-  $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($mixedFloat), $mixedFloat->getItemCost()));
-  $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($pepFloat), $pepFloat->getItemCost()));
-  $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($ewwFloat), $ewwFloat->getItemCost()));
+  // $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($mixedFloat), $mixedFloat->getItemCost()));
+  // $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($pepFloat), $pepFloat->getItemCost()));
+  // $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($ewwFloat), $ewwFloat->getItemCost()));
 
   // Add the rest of the cart items.
-  $shoppingCart->addToCart($bubblegumMilkshake->getItemCost());
-  $shoppingCart->addToCart($vanillaCone->getItemCost());
-  $shoppingCart->addToCart($superSweetCone->getItemCost());
+  $shoppingCart->addToCart($bubblegumMilkshake);
+  $shoppingCart->addToCart($vanillaCone);
+  $shoppingCart->addToCart($superSweetCone);
 
-  echo $shoppingCart->getTotal()."\n";
+  $shoppingCart->listCartItems();
+
+
+  // echo $shoppingCart->getTotal()."\n";

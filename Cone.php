@@ -11,11 +11,13 @@
       public $coneType;
       protected $itemCost;
       protected $scoops = array();
+      protected $itemName;
 
     // Initialize object.
-    public function __construct($type, $flavors)
+    public function __construct($type, $flavors, $coneName)
     {
         $this->coneType = $this->coneTypes[$type];
+        $this->itemName = $coneName;
 
       // If we have more than one flavor we have more than one scoop. So we
       // check. If it is an array we only map the first two entries. Because
@@ -61,5 +63,10 @@
     public function getItemCost()
     {
         return $this->itemCost;
+    }
+
+    // The the name of the item. This is just whatever was passed in on create.
+    public function getItemName() {
+      return $this->itemName;
     }
   };
