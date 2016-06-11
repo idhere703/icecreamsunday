@@ -6,7 +6,10 @@
       "sprite" => ["price" => 1.50, "name" => "Rich mans Sierra Mist"]
     ];
     protected $sodaType;
+    protected $itemCost;
     protected $scoops = array();
+
+    // Initialize object.
     function __construct($type, $flavors) {
       $this->sodaType = $this->sodaTypes[$type];
       // If we have more than one flavor we have more than one scoop. So we
@@ -20,9 +23,12 @@
         // Else, just push the one, since I still want it in an array.
         array_push($this->scoops, $this->productInfo[$flavors]);
       }
+
+      $this->itemCost = $this->initTotal();
     }
+
     // Get total price for float.
-    public function getTotal() {
+    public function initTotal() {
       // Ret val.
       $temp = 0;
       // Add soda price.
@@ -34,6 +40,9 @@
       return $temp;
     }
 
+    public function getItemCost() {
+      return $this->itemCost;
+    }
 
   };
 
