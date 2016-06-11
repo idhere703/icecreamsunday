@@ -8,15 +8,17 @@
   $shoppingCart = new Cart();
 
   // $vanillaCone = new Cone("waffle", "vanilla");
-  // $bubblegumMilkshake = new Milkshake("whole", "bubblegum");
+  $bubblegumMilkshake = new Milkshake("whole", "bubblegum");
 
   $mixedFloat = new Float("coke", ["vanilla", "chocolate"]);
-  // $pepFloat = new Float("pepsi", "butterPecan");
+  $pepFloat = new Float("pepsi", "butterPecan");
   // $ewwFloat = new Float("sprite", "licorice");
 
   // We qualify for a discount so lets apply it and add to the cart.
-  $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($mixedFloat), $mixedFloat->getItemCost()));
+  // $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($mixedFloat), $mixedFloat->getItemCost()));
+  // $shoppingCart->addToCart($shoppingCart->applyDiscount(get_class($pepFloat), $pepFloat->getItemCost()));
 
+  $shoppingCart->addToCart($bubblegumMilkshake->getItemCost());
   echo $shoppingCart->getTotal() . "\n";
 
 ?>

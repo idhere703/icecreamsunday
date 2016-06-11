@@ -1,5 +1,6 @@
 <?php
   class Float extends ProductInformation {
+    // Variables
     protected $sodaTypes = [
       "coke" => ["price" => 2.55, "name" => "Brand Name Coke"],
       "pepsi" => ["price" => 1.00, "name" => "Poor mans Coke"],
@@ -29,7 +30,7 @@
 
     // Get total price for float.
     public function initTotal() {
-      // Ret val.
+      // Return val.
       $temp = 0;
       // Add soda price.
       $temp += $this->sodaType["price"];
@@ -37,9 +38,11 @@
       foreach ($this->scoops as $scoop) {
         $temp += $scoop["price"];
       }
+      // Return total item cost.
       return $temp;
     }
 
+    // Get the total item cost.
     public function getItemCost() {
       return $this->itemCost;
     }

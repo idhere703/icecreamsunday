@@ -39,7 +39,8 @@
           $cost = round($cost * $this->milkShakeDiscount, 2);
           return $cost;
         } else {
-          echo "Discount not available.";
+          echo "Discount not available.\n\n";
+          return $cost;
         }
     }
 
