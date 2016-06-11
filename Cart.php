@@ -53,6 +53,7 @@
         echo "======================================\n";
         echo "=========Items In Cart================\n\n";
         foreach ($this->items as $item) {
+            echo 'Product Type: '.get_class($item)."\n";
             echo 'Item Name: '.$item->getItemName()."\n";
             echo 'Item Price: $'.number_format($item->getItemCost(), 2)."\n\n";
         }
